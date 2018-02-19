@@ -217,7 +217,7 @@ def see_all_tweets():
     for ids in list2:
         u2 = User.query.filter_by(userID = ids).first()
         list3.append(u2.username)
-    fulllist = zip(list1, list3)
+    fulllist = list(zip(list1, list3))
     return render_template('all_tweets.html', all_tweets=fulllist)
 
 @app.route('/all_users')
